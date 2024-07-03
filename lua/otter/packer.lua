@@ -34,4 +34,16 @@ return require('packer').startup(function(use)
      }
   }
 
+  -- NeoVim-Orgmode
+  use {'nvim-orgmode/orgmode', 
+  config = function()
+      require('orgmode').setup{}
+  end}
+
+  -- Orgmode bullets
+  use {'akinsho/org-bullets.nvim'}
+
+  -- Headlines (Orgmode section highlighting)
+  use {"lukas-reineke/headlines.nvim"}
+
 end)
