@@ -34,6 +34,28 @@ return require('packer').startup(function(use)
      }
   }
 
+  -- Neovim Lsp
+  use {
+      'neovim/nvim-lspconfig',
+	  requires = {
+		  -- LSP Support
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
+
   -- NeoVim-Orgmode
   use {'nvim-orgmode/orgmode', 
   config = function()
@@ -45,5 +67,15 @@ return require('packer').startup(function(use)
 
   -- Headlines (Orgmode section highlighting)
   use {"lukas-reineke/headlines.nvim"}
+
+  -- Auto Pairs
+  use {'jiangmiao/auto-pairs'}
+
+  -- CoC
+  use {
+      'neoclide/coc.nvim',
+      branch = 'release'
+  }
+
 
 end)
